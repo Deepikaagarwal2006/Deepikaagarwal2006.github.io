@@ -190,7 +190,7 @@ body {
 }
 
 .price {
-    color: #b12704;
+    color: #950a36;
     font-weight: bold;
 }
 
@@ -204,7 +204,7 @@ body {
 .buy-btn {
     padding: 7px 14px;
     border: none;
-    background-color: #ff9f00;
+    background-color: #ee7912;
     cursor: pointer;
     border-radius: 3px;
     font-size: 13px;
