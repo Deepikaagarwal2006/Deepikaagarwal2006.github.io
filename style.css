@@ -163,13 +163,16 @@ body {
     transform: translateY(-3px);
 }
 
+/* Larger image size - 170px height */
 .product-img {
-    height: 130px;
+    width: 100%;
+    height: 170px;        /* larger than 150px, shows full image */
+    object-fit: contain;  /* ensures complete image visibility */
     margin-bottom: 10px;
     border-radius: 3px;
 }
 
-/* Placeholder image */
+/* Placeholder image (if needed) */
 .placeholder {
     background-color: #ddd;
     display: flex;
@@ -177,6 +180,8 @@ body {
     align-items: center;
     color: #555;
     font-size: 14px;
+    width: 100%;
+    height: 170px;        /* matches .product-img height */
 }
 
 .product-card h3 {
@@ -245,14 +250,25 @@ body {
    RESPONSIVE BREAKPOINTS
 ===================== */
 
-/* Tablets */
-@media (max-width: 900px) {
-    .hero h1 {
-        font-size: 24px;
+/* Tablets and small laptops */
+@media (max-width: 1200px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
     }
 
-    .navbar {
-        gap: 10px;
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 24px;
     }
 }
 
@@ -261,23 +277,31 @@ body {
     .navbar {
         flex-direction: column;
         align-items: stretch;
-    }
-
-    .nav-links {
-        justify-content: space-around;
-        width: 100%;
+        gap: 10px;
     }
 
     .search-bar {
         width: 100%;
     }
 
+    .nav-links {
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
     .hero {
         padding: 25px 15px;
+        margin: 10px 5px;
     }
 
     .hero h1 {
         font-size: 22px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 
     .buy-btn {
